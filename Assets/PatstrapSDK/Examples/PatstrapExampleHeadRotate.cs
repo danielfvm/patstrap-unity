@@ -48,5 +48,13 @@ namespace Patstrap
             PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.FrontLeft, leftStrength, delay * 4.0f);
             PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.FrontRight, rightStrength, delay * 4.0f);
         }
+
+        private void OnDisable()
+        {
+            PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.FrontLeft, 0f, 0f);
+            PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.FrontRight, 0f, 0f);
+            PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.BackRight, 0f, 0f);
+            PatstrapSdkManager.SendHaptic(PatstrapSdkManager.HapticMotor.BackLeft, 0f, 0f);
+        }
     }
 }
